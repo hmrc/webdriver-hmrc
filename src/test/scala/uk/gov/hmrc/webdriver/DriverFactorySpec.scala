@@ -17,7 +17,7 @@ class DriverFactorySpec extends AnyWordSpec with Matchers {
     "return default Chrome options" in new Setup {
       val options: ChromeOptions = driverFactory.chromeOptions(None)
 
-      options.asMap().get("browserName") shouldBe "chrome"
+      options.asMap().get("browserName")                 shouldBe "chrome"
       options.asMap().get("goog:chromeOptions").toString shouldBe "{args=[start-maximized], extensions=[]}"
     }
 
@@ -29,15 +29,15 @@ class DriverFactorySpec extends AnyWordSpec with Matchers {
 
       val options: ChromeOptions = driverFactory.chromeOptions(Some(capabilities))
 
-      options.asMap().get("acceptInsecureCerts") shouldBe true
-      options.asMap().get("browserName") shouldBe "chrome"
+      options.asMap().get("acceptInsecureCerts")         shouldBe true
+      options.asMap().get("browserName")                 shouldBe "chrome"
       options.asMap().get("goog:chromeOptions").toString shouldBe "{args=[start-maximized, --headless], extensions=[]}"
     }
 
     "return default Edge options" in new Setup {
       val options: EdgeOptions = driverFactory.edgeOptions(None)
 
-      options.asMap().get("browserName") shouldBe "MicrosoftEdge"
+      options.asMap().get("browserName")             shouldBe "MicrosoftEdge"
       options.asMap().get("ms:edgeOptions").toString shouldBe "{args=[start-maximized], extensions=[]}"
     }
 
@@ -49,15 +49,15 @@ class DriverFactorySpec extends AnyWordSpec with Matchers {
 
       val options: EdgeOptions = driverFactory.edgeOptions(Some(capabilities))
 
-      options.asMap().get("acceptInsecureCerts") shouldBe true
-      options.asMap().get("browserName") shouldBe "MicrosoftEdge"
+      options.asMap().get("acceptInsecureCerts")     shouldBe true
+      options.asMap().get("browserName")             shouldBe "MicrosoftEdge"
       options.asMap().get("ms:edgeOptions").toString shouldBe "{args=[start-maximized, --headless], extensions=[]}"
     }
 
     "return default Firefox options" in new Setup {
       val options: FirefoxOptions = driverFactory.firefoxOptions(None)
 
-      options.asMap().get("browserName") shouldBe "firefox"
+      options.asMap().get("browserName")                 shouldBe "firefox"
       options.asMap().get("moz:firefoxOptions").toString shouldBe "{}"
     }
 
@@ -69,8 +69,8 @@ class DriverFactorySpec extends AnyWordSpec with Matchers {
 
       val options: FirefoxOptions = driverFactory.firefoxOptions(Some(capabilities))
 
-      options.asMap().get("acceptInsecureCerts") shouldBe true
-      options.asMap().get("browserName") shouldBe "firefox"
+      options.asMap().get("acceptInsecureCerts")         shouldBe true
+      options.asMap().get("browserName")                 shouldBe "firefox"
       options.asMap().get("moz:firefoxOptions").toString shouldBe "{args=[-headless]}"
     }
 

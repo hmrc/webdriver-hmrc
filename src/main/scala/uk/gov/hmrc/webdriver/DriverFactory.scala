@@ -48,7 +48,7 @@ class DriverFactory extends LazyLogging {
       case Some(value) =>
         options = options.merge(value)
         options
-      case None =>
+      case None        =>
         options
     }
   }
@@ -62,7 +62,7 @@ class DriverFactory extends LazyLogging {
       case Some(value) =>
         options = options.merge(value)
         options
-      case None =>
+      case None        =>
         options
     }
   }
@@ -74,7 +74,7 @@ class DriverFactory extends LazyLogging {
       case Some(value) =>
         options = options.merge(value)
         options
-      case None =>
+      case None        =>
         options
     }
   }
