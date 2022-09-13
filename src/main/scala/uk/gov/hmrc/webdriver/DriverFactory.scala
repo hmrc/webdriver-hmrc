@@ -80,9 +80,11 @@ class DriverFactory extends LazyLogging {
   }
 
   private def remoteWebDriver(capabilities: MutableCapabilities): RemoteWebDriver = {
-    val remoteAddress: String = "http://localhost:4444"
+    val remoteAddress: String   = "http://localhost:4444"
+    val driver: RemoteWebDriver = new RemoteWebDriver(new URL(remoteAddress), capabilities)
 
-    new RemoteWebDriver(new URL(remoteAddress), capabilities)
+    logger.info(s"Browser: ${driver.getCapabilities.getBrowserName} ${driver.getCapabilities.getBrowserVersion}")
+    driver
   }
 
 }
