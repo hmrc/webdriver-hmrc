@@ -9,7 +9,8 @@ object Dependencies {
   )
 
   val test: Seq[ModuleID] = Seq(
-    "org.scalatest" %% "scalatest" % "3.2.13" % Test
+    "com.vladsch.flexmark" % "flexmark-all" % "0.62.2" % Test,
+    "org.scalatest"       %% "scalatest"    % "3.2.13" % Test
   )
 
 }
